@@ -1,0 +1,43 @@
+
+  <ion-header>
+    <ion-toolbar>
+      <ion-segment [(ngModel)]="type">
+        <ion-segment-button value="waiting">
+          <span class="lombard-list">Ожидаемые</span> 
+        </ion-segment-button>
+        <ion-segment-button value="accepted">
+          <span class="lombard-list">Одобренные</span>
+        </ion-segment-button>
+        <ion-segment-button value="cancelled">
+            <span class="lombard-list">Отклоненные</span> 
+          </ion-segment-button>
+      </ion-segment>
+    </ion-toolbar>
+  </ion-header> 
+
+
+<ion-content padding>
+    <div [ngSwitch]="type">
+
+        <ion-list *ngSwitchCase="'waiting'">
+          <button ion-item *ngFor="let item of waitings" (click)="itemSelected(item)">     
+            <h2>{{item.name}}</h2> 
+            <p>Запрошенная сумма: {{item.price}}</p>
+          </button>  
+        </ion-list>
+
+        <ion-list *ngSwitchCase="'accepted'">
+          <button ion-item *ngFor="let item of accepteds" (click)="itemSelected(item)">     
+            <h2>{{item.name}}</h2> 
+            <p>Запрошенная сумма: {{item.price}}</p>
+          </button>  
+        </ion-list>
+        
+        <ion-list *ngSwitchCase="'cancelled'">
+            <button ion-item *ngFor="let item of cancelleds" (click)="itemSelected(item)">     
+                <h2>{{item.name}}</h2> 
+                <p>Запрошенная сумма: {{item.price}}</p>
+              </button> 
+        </ion-list>
+    </div>
+</ion-content>

@@ -1,0 +1,29 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{item.name}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <p class="cabinet-img">
+    <img src="{{item.img}}">
+</p>
+
+<h3>Описание:
+  {{item.description}}
+</h3>
+
+<ion-item>
+  <ion-icon name="ios-cash-outline" item-start></ion-icon>
+  Цена
+  <p item-end>{{item.price}}</p>
+</ion-item>
+
+
+<button ion-button block > Отправить заявку</button>
+
+</ion-content>

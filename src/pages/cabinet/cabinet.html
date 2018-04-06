@@ -1,0 +1,37 @@
+<ion-header>
+    <ion-navbar>
+            <ion-title>Кабинет</ion-title>
+            <ion-buttons end>
+              <button (click)="logoutClicked()" ion-button icon-only color="royal"> 
+                <ion-icon name="ios-log-out"></ion-icon>
+              </button>
+            </ion-buttons>
+          
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content padding>
+      <p class="cabinet-img">
+          <img src="{{user.img}}">
+      </p>
+    <ion-list>
+        <ion-item>
+          <ion-icon name="md-person" item-start></ion-icon>
+          ФИО
+          <p item-end>{{user.name}}</p>
+        </ion-item>
+
+        <ion-item>
+            <ion-icon name="ios-call" item-start></ion-icon>
+            Телефон
+            <p item-end>{{user.phone}}</p>
+          </ion-item>
+
+          <ion-item>
+              <ion-icon name="ios-mail" item-start></ion-icon>
+            E-mail
+            <p item-end>{{user.mail}}</p>
+            </ion-item>
+      </ion-list>
+  </ion-content>
+  

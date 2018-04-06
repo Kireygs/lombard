@@ -1,0 +1,35 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{item.title}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+        <ion-list>
+          <ion-item>
+            <ion-label floating>Что хотите сдать?</ion-label>
+            <ion-input [(ngModel)]="name" type="text"></ion-input>
+          </ion-item>
+        
+          <ion-item>
+            <ion-label floating>Предлогаемая цена</ion-label>
+            <ion-input [(ngModel)]="price" type="text"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label>Выберите категорию</ion-label>
+            <ion-select [(ngModel)]="category" cancelText="Отмена" okText="Выбрать">
+              <ion-option *ngFor="let category of categories" [value]="category.name">{{category.name}}</ion-option>
+            </ion-select>
+          </ion-item>
+
+          <ion-item>
+            <ion-textarea [(ngModel)]="info" class="info" placeholder="Дополнительная информация"></ion-textarea>    
+          </ion-item>
+    
+          <button ion-button block color="secondary" (click)="addRequest()">Оставить заявку</button>  
+        </ion-list>
+</ion-content>

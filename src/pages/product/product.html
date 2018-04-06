@@ -1,0 +1,45 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Товары</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <!-- <ion-list>
+    <button ion-item *ngFor="let item of items" (click)="itemSelected(item)"> 
+      <img class="product-img" src="{{item.img}}" alt="">    
+     <h2>{{ item.name }}</h2> 
+     <p>{{item.price}}</p>
+    </button>  
+  </ion-list> -->
+
+  <ion-list>
+    <ion-item>
+      <ion-label>Выберите категорию</ion-label>
+      <ion-select [(ngModel)]="gaming">
+        <ion-option value="nes">Бытовая техника</ion-option>
+        <ion-option value="n64">Ювелир</ion-option>
+        <ion-option value="ps">Телефоны, аксессуары</ion-option>
+        <ion-option value="genesis">Компьютерная техника</ion-option>
+        <ion-option value="saturn">Сотовая техника</ion-option>
+      </ion-select>
+    </ion-item>
+  </ion-list>
+
+
+  <ion-list>
+      <ion-item *ngFor="let item of items" (click)="itemSelected(item)">
+        <ion-thumbnail item-start>
+          <img src="{{item.img}}">
+        </ion-thumbnail>
+        <h2>{{item.name}}</h2>
+        <p>{{item.price}}</p>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+
+

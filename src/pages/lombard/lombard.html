@@ -1,0 +1,36 @@
+
+<ion-header>
+  <ion-toolbar>
+    <ion-segment [(ngModel)]="type">
+      <ion-segment-button value="list">
+        <span class="lombard-list">Список</span> 
+      </ion-segment-button>
+      <ion-segment-button value="map">
+        <span class="lombard-list">Карта</span>
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content >
+
+    <div [ngSwitch]="type">
+
+      <ion-list *ngSwitchCase="'list'">
+        <button ion-item *ngFor="let item of items" (click)="itemSelected(item)">     
+          <h2>{{ item.title }}</h2> 
+          <p>{{item.adress}}</p>
+        </button>  
+      </ion-list>
+
+      <agm-map [latitude]="lat" [longitude]="lng" *ngSwitchCase="'map'" [zoom]="14">
+          <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+      </agm-map>
+
+    </div>
+
+
+
+
+  </ion-content>

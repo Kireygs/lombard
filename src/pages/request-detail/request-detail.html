@@ -1,0 +1,35 @@
+
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>{{item.name}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+    <img src="{{item.img}}" alt="">
+    <ion-list>
+
+        <ion-item>
+            Улица:
+            <p item-end>{{lombard.adress}}</p>
+          </ion-item>
+
+        <ion-item>
+          Предложенная цена
+          <p item-end>{{item.price}}</p>
+        </ion-item>
+
+      <ion-item>
+          Категория
+        <p item-end>{{item.category}}</p>
+      </ion-item>
+
+        <ion-item>
+            Дополнительно
+            <p item-end>{{item.info}}</p>
+          </ion-item>
+      </ion-list> 
+        <button ion-button block color="danger" *ngIf="item.status == 'Ожидаемые'" (click)="cancelRequest(item.id)">Отменить заявку</button>  
+      </ion-content>
